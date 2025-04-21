@@ -28,6 +28,26 @@ public class Graph {
         adjacencyLists[to].add(from);
     }
 
+    public void addEdge(char fromLabel, char toLabel) {
+        int from = getIndex(fromLabel);
+        int to   = getIndex(toLabel);
+        if (from == -1 || to == -1) {
+            throw new IllegalArgumentException(
+                    "Вершина не найдена: " + fromLabel + " или " + toLabel
+            );
+        }
+        addEdge(from, to);
+    }
+
+    private int getIndex(char label) {
+        for (int i = 0; i < nodeCount; i++) {
+            if (vertex[i].getLabel() == label) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public void displayVertex(int index) {
         System.out.print(vertex[index].getLabel() + " ");
     }

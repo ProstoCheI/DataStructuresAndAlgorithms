@@ -10,11 +10,11 @@ public class Client {
         graph.addVertex('D');
         graph.addVertex('E');
 
-        graph.addEdge(0, 1);
-        graph.addEdge(1, 2);
-        graph.addEdge(2, 3);
-        graph.addEdge(2, 4);
-        graph.addEdge(1, 3);
+        graph.addEdge('A', 'B');
+        graph.addEdge('A', 'C');
+        graph.addEdge('B', 'D');
+        graph.addEdge('B', 'E');
+        graph.addEdge('C', 'D');
 
         graph.depthFirstTraversal();
     }
