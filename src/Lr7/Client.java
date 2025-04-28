@@ -1,0 +1,33 @@
+package Lr7;
+
+/**
+ * Класс Client для демонстрации работы топологической сортировки
+ * в направленном графе (алгоритм Кана).
+ */
+public class Client {
+    public static void main(String[] args) {
+        DirectedGraph graph = new DirectedGraph(6);
+
+        // создаём вершины A–F
+        graph.addVertex('A');
+        graph.addVertex('B');
+        graph.addVertex('C');
+        graph.addVertex('D');
+        graph.addVertex('E');
+        graph.addVertex('F');
+
+        // добавляем ориентированные рёбра по именам
+        graph.addEdge('A','D');
+        graph.addEdge('A','E');
+        graph.addEdge('B','E');
+        graph.addEdge('C','F');
+        graph.addEdge('D','B');
+        graph.addEdge('E','C');
+        graph.addEdge('E','F');
+        //graph.addEdge('F','E');
+
+        // выполняем и выводим топологическую сортировку
+        System.out.println("Результат топологической сортировки:");
+        graph.topologicSearch();
+    }
+}
